@@ -1,22 +1,21 @@
 import UIKit
 
 class HabitsViewController: UIViewController {
-
+    
+    var titlePost: String = "Сегодня"
+    
+    private lazy var openButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openInfo))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemGray
+        navigationItem.rightBarButtonItem = openButton
+        view.backgroundColor = UIColor("#FFFFFF")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func openInfo(_ sender: UIButton) {
+        _ = InfoViewController()
+        
+        
     }
-    */
-
 }
