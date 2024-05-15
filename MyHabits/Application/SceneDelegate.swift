@@ -13,10 +13,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let habitsViewController = UINavigationController(rootViewController: HabitsViewController())
         let infoViewController = UINavigationController(rootViewController: InfoViewController())
         
-        let tabBarController = UITabBarController()
         
         habitsViewController.tabBarItem = UITabBarItem(title: "Привычки", image: UIImage(systemName: "list.bullet"), tag: 0)
         infoViewController.tabBarItem = UITabBarItem(title: "Информация", image: UIImage(systemName: "info.circle.fill"), tag: 1)
+        
+        let tabBarController = UITabBarController()
         
         let controllers = [habitsViewController, infoViewController]
         tabBarController.viewControllers = controllers

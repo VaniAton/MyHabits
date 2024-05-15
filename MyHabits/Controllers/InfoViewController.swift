@@ -10,6 +10,7 @@ class InfoViewController: UIViewController {
         
         return scrollTextInformation
     }()
+    
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false

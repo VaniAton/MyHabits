@@ -25,7 +25,12 @@ class HabitsViewController: UIViewController {
     }
     
     @objc func openInfo(_ sender: UIButton) {
-        _ = InfoViewController()
+        let habitViewController = HabitViewController()
+        
+        habitViewController.modalTransitionStyle = .flipHorizontal
+        habitViewController.modalPresentationStyle = .fullScreen
+        
+        present(habitViewController, animated: true)
     }
     
     private func setupConstraintsForHabitVC() {
