@@ -100,8 +100,7 @@ class HabitViewController: UIViewController {
         title = "Создать"
         view.backgroundColor = UIColor("#FFFFFF")
         navigationItem.rightBarButtonItem = safeButton
-        self.navigationController?.navigationBar.topItem?.title = "Отменить"
-        navigationController?.navigationBar.prefersLargeTitles = false
+      //  self.navigationController?.navigationBar.topItem?.title = "Отменить"
         addSubviews()
         setupConstraints()
         setupConstraintsContent()
@@ -109,7 +108,12 @@ class HabitViewController: UIViewController {
     }
     
     @objc func safeHabit(_ sender: UIButton) {
-        
+        navigationController?.popViewController(animated: true)
+        let newHabit = Habit(name: "Выпить стакан воды перед завтраком",
+                             date: Date(),
+                             color: .systemRed)
+        let store = HabitsStore.shared
+        store.habits.append(newHabit)
     }
     
     @objc func dateChanged(_ sender: UIButton) {
@@ -132,13 +136,15 @@ class HabitViewController: UIViewController {
         let colorPicker = UIColorPickerViewController()
         colorPicker.title = "Цвет"
         colorPicker.supportsAlpha = false
-        colorPicker.delegate = self
+        colorPicker.selectedColor = .placeholderText
         colorPicker.modalPresentationStyle = .popover
         if #available(iOS 16.0, *) {
             colorPicker.popoverPresentationController?.sourceItem = self.navigationItem.rightBarButtonItem
         } else {
         }
-        self.present(colorPicker, animated: true)
+        self.present(colorPicker, animated: true, completion: nil)
+        
+        colorPicker.delegate = self
     }
     
    func getDateFromPicker() {
@@ -199,6 +205,7 @@ class HabitViewController: UIViewController {
             
             nameTextField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             nameTextField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 46),
+            nameTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             colorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             colorLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 83),
@@ -252,5 +259,7 @@ extension HabitViewController: UITextFieldDelegate {
 }
 
 extension HabitViewController:UIColorPickerViewControllerDelegate {
-    
+    func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
+        self.colorView.backgroundColor = viewController.selectedColor
+    }
 }
