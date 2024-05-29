@@ -109,7 +109,7 @@ class HabitViewController: UIViewController {
     
     @objc func safeHabit(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
-        let newHabit = Habit(name: "Выпить стакан воды перед завтраком",
+        let newHabit = Habit(name: nameTextField.text!,
                              date: Date(),
                              color: .systemRed)
         let store = HabitsStore.shared

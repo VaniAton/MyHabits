@@ -93,7 +93,6 @@
 				996D87932BA063ED0056A5B3 /* InfoViewController.swift */,
 				99D6DF032BD9B1BF0045977B /* HabitViewController.swift */,
 				9907C81E2C067C4800F7A1E1 /* HabitDetailsViewController.swift */,
-				997100E62BC47E0C00811725 /* HabitsStore.swift */,
 				9907C8192C0534E500F7A1E1 /* Data */,
 				997100E52BC47E0100811725 /* Storage */,
 			);
@@ -103,6 +102,7 @@
 		997100E52BC47E0100811725 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				997100E62BC47E0C00811725 /* HabitsStore.swift */,
 				997100E82BC4865000811725 /* extUIColor.swift */,
 			);
 			path = Storage;

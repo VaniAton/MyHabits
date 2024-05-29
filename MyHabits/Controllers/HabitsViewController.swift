@@ -17,14 +17,14 @@ class HabitsViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         viewLayout.estimatedItemSize = .init(width: 343, height: 60)
-        
+        viewLayout.minimumLineSpacing = 12
+        viewLayout.sectionInset = .init(top: 10, left: 0, bottom: 10, right: 0)
         let collectionView = UICollectionView(
             frame: .zero,
             collectionViewLayout: viewLayout
         )
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = UIColor("#F2F2F7")
-        
         collectionView.register(
             ProgressCollectionViewCell.self ,
             forCellWithReuseIdentifier: "\(ProgressCollectionViewCell.self)"
