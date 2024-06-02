@@ -1,6 +1,6 @@
 import UIKit
 
-class HabitViewController: UIViewController {
+ class HabitViewController: UIViewController {
     
     private lazy var scrollHabitView: UIScrollView = {
         let scrollHabitView = UIScrollView()
@@ -27,7 +27,7 @@ class HabitViewController: UIViewController {
     }()
     
     private lazy var nameTextField: UITextField = {
-        let nameTextField = UITextField()
+         let nameTextField = UITextField()
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         nameTextField.placeholder = "Бегать по утрам, спать 8 часов и т.д."
         nameTextField.font = UIFont.systemFont(ofSize: 16)

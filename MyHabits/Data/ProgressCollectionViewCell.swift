@@ -1,7 +1,19 @@
 import Foundation
 import UIKit
 
-class ProgressCollectionViewCell: UICollectionViewCell {
+protocol SelfConfiguringCell {
+    static var reuseId: String { get }
+    func configure(with intValue: Int)
+}
+
+class ProgressCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
+    
+    func configure(with intValue: Int) {
+        print("1")
+    }
+    
+    
+    static var reuseId: String = "Progress"
     
     private lazy var motivationLabel: UILabel = {
         let motivationLabel = UILabel()
@@ -53,7 +65,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
             contentView.addSubview(motivationLabel)
             contentView.addSubview(motivationProgressProcent)
             contentView.addSubview(progresLabelView)
-        }
+    }
     
     func setupConstraintsForProgresView() {
         

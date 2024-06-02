@@ -77,6 +77,8 @@
 		996D877A2B9685860056A5B3 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				997100E52BC47E0100811725 /* Storage */,
+				9907C8192C0534E500F7A1E1 /* Data */,
 				997100E72BC480F500811725 /* Application */,
 				996D87952BA064000056A5B3 /* Controllers */,
 				996D87862B9685880056A5B3 /* LaunchScreen.storyboard */,
@@ -93,8 +95,6 @@
 				996D87932BA063ED0056A5B3 /* InfoViewController.swift */,
 				99D6DF032BD9B1BF0045977B /* HabitViewController.swift */,
 				9907C81E2C067C4800F7A1E1 /* HabitDetailsViewController.swift */,
-				9907C8192C0534E500F7A1E1 /* Data */,
-				997100E52BC47E0100811725 /* Storage */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
