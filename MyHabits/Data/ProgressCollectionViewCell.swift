@@ -90,6 +90,6 @@ class ProgressCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
     func setup(
             with habit: Habit
         ) {
-            progresLabelView.setProgress(0.1, animated: true)
+            progresLabelView.setProgress(0.8, animated: false)
         }
 }

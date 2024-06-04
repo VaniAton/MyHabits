@@ -12,7 +12,7 @@ class HabitCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
     private lazy var nameOfHabit: UILabel = {
         let nameOfHabit = UILabel()
         nameOfHabit.translatesAutoresizingMaskIntoConstraints = false
-        nameOfHabit.text = "test"
+        nameOfHabit.text = HabitsStore.shared.habits.first?.name
         return nameOfHabit
     }()
     
@@ -21,7 +21,7 @@ class HabitCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
         nameTimeOfHabit.translatesAutoresizingMaskIntoConstraints = false
         nameTimeOfHabit.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         nameTimeOfHabit.textColor = UIColor("#8E8E93")
-        nameTimeOfHabit.text = "Test test"
+        nameTimeOfHabit.text = HabitsStore.shared.habits.first?.dateString
         return nameTimeOfHabit
     }()
     
@@ -30,7 +30,7 @@ class HabitCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
         countOfHabit.translatesAutoresizingMaskIntoConstraints = false
         countOfHabit.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         countOfHabit.textColor = UIColor("#8E8E93")
-        countOfHabit.text = "счетчик 1 test"
+        countOfHabit.text = HabitsStore.shared.habits.first?.isAlreadyTakenToday.description
         return countOfHabit
     }()
     
@@ -38,7 +38,7 @@ class HabitCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
         let checkOfHabit = UIView()
         checkOfHabit.translatesAutoresizingMaskIntoConstraints = false
         checkOfHabit.layer.cornerRadius = 20
-        checkOfHabit.backgroundColor = .black
+        checkOfHabit.backgroundColor = HabitsStore.shared.habits.first?.color.self
         return checkOfHabit
     }()
     

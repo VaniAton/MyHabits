@@ -9,7 +9,7 @@ class HabitsViewController: UIViewController {
             case .progress:
                 return 1
             case .habit:
-                return 1
+                return 2
             }
         }
     }
@@ -139,7 +139,7 @@ class HabitsViewController: UIViewController {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.7))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item,count: 1)
         let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = NSDirectionalEdgeInsets(top: 100, leading: 16, bottom: 0, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 22, leading: 16, bottom: 0, trailing: 16)
         return section
     }
     
@@ -157,10 +157,10 @@ class HabitsViewController: UIViewController {
         
         NSLayoutConstraint.activate([
         
-            collectionView.topAnchor.constraint(equalTo: todayLabel.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            self.collectionView.topAnchor.constraint(equalTo: todayLabel.bottomAnchor),
+            self.collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            self.collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            self.collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         
         ])
     }

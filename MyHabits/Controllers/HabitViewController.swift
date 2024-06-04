@@ -109,9 +109,9 @@ import UIKit
     
     @objc func safeHabit(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
-        let newHabit = Habit(name: nameTextField.text!,
-                             date: Date(),
-                             color: .systemRed)
+        let newHabit = Habit(name: nameTextField.text ?? "неверный набор текста",
+                             date: dateTimePicker.date,
+                             color: colorView.backgroundColor!.self)
         let store = HabitsStore.shared
         store.habits.append(newHabit)
     }
